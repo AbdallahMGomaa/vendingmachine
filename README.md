@@ -12,7 +12,7 @@
 1. Clone the repository:
 
     ```
-    git clone https://github.com/yourusername/project-name.git
+    git clone git@github.com:AbdallahMGomaa/vendingmachine.git
     ```
 
 2. Create a virtual environment
