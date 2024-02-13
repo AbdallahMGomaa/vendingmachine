@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "8b291ccb-ff1e-4f72-92b3-6a3fe79d451e",
+		"name": "vending machine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27184797"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"seller\",\n    \"email\": \"seller@seller.com\",\n    \"password\": \"seller123\",\n    \"role\": \"Seller\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/auth/token/register/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"auth",
+						"token",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"buyer\",\n    \"password\": \"buyer123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/auth/token/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"auth",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIyODMyLCJpYXQiOjE3MDc3MjI1MzIsImp0aSI6IjI0YmEyZDA0YzUyNjRjYmM4MTllNDhmODEyM2E2ODU1IiwidXNlcl9pZCI6Mn0.Wta2Y73F6BY6rDs-0CjKz0DiSCCzX4JBABVhqyOo4NI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deposit_amount\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/deposit/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"deposit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIyODMyLCJpYXQiOjE3MDc3MjI1MzIsImp0aSI6IjI0YmEyZDA0YzUyNjRjYmM4MTllNDhmODEyM2E2ODU1IiwidXNlcl9pZCI6Mn0.Wta2Y73F6BY6rDs-0CjKz0DiSCCzX4JBABVhqyOo4NI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deposit_amount\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/balance/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"balance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIyNTc2LCJpYXQiOjE3MDc3MjIyNzYsImp0aSI6IjYxZGEzMzU5OGM3NDRjYzE5YjczZjc4N2NiMmNjMTRkIiwidXNlcl9pZCI6Mn0.1GN7Ig4B8xgJaMMqmaUp6XNukTSJy7yCow_ICyneTaM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/all_products/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"all_products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIzMzQzLCJpYXQiOjE3MDc3MjMwNDMsImp0aSI6ImQwZGY1YmM5OWY3MDRhNGViY2IxNzZiMWIwOWY2MzIwIiwidXNlcl9pZCI6Mn0.06eO3IvWBTuuzxbcHQCAxtKQRWxGQSk7t3PiSKS9uMQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 2,\n    \"amount_of_product\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/buy/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"buy",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIzNTE2LCJpYXQiOjE3MDc3MjMyMTYsImp0aSI6IjRlMWFmZGMwOWVlNjRkYTU5MjZjODgyNTkwMThjNmM0IiwidXNlcl9pZCI6Mn0.waOevCKuVLRM7rBQq5S1KuxjC6ZKktdFhg8WFJqfJwU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 2,\n    \"amount_of_product\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/transactions/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"transactions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIyODMyLCJpYXQiOjE3MDc3MjI1MzIsImp0aSI6IjI0YmEyZDA0YzUyNjRjYmM4MTllNDhmODEyM2E2ODU1IiwidXNlcl9pZCI6Mn0.Wta2Y73F6BY6rDs-0CjKz0DiSCCzX4JBABVhqyOo4NI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 2,\n    \"amount_of_product\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/reset/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"reset",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get seller product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIxNDk1LCJpYXQiOjE3MDc3MjExOTUsImp0aSI6ImUwMGUwNDc0MGM3MTQwZTdiNTJlZWJhYzU4M2YzOTQ0IiwidXNlcl9pZCI6M30.HyXjpHnsCXFG-0eWyvlrmd6l1XXSGwsck_ZP22aWrkc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:9000/api/crm/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post seller product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIxNDk1LCJpYXQiOjE3MDc3MjExOTUsImp0aSI6ImUwMGUwNDc0MGM3MTQwZTdiNTJlZWJhYzU4M2YzOTQ0IiwidXNlcl9pZCI6M30.HyXjpHnsCXFG-0eWyvlrmd6l1XXSGwsck_ZP22aWrkc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_name\": \"iphone\",\n    \"product_cost\": 10,\n    \"product_amount\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put seller product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIxOTU4LCJpYXQiOjE3MDc3MjE2NTgsImp0aSI6ImNlNjZmYjI5N2Q3NTQ5Y2U4M2NjOTBjMTA3NzY0ZDJhIiwidXNlcl9pZCI6M30.Ha85I0Ud0v1WeiZsLE1j9klElQEw3EhTXQYvyCQLnXk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 1,\n    \"product_name\": \"iphone\",\n    \"product_cost\": 11,\n    \"product_amount\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete seller product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NzIxOTU4LCJpYXQiOjE3MDc3MjE2NTgsImp0aSI6ImNlNjZmYjI5N2Q3NTQ5Y2U4M2NjOTBjMTA3NzY0ZDJhIiwidXNlcl9pZCI6M30.Ha85I0Ud0v1WeiZsLE1j9klElQEw3EhTXQYvyCQLnXk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 1,\n    \"product_name\": \"iphone\",\n    \"product_cost\": 11,\n    \"product_amount\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/crm/product/delete/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"crm",
+						"product",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
